@@ -12,12 +12,6 @@ pipeline {
     }
 
     stages{
-	    
-	stage('Fetch code') {
-          steps{
-              git branch: 'vp-rem', url:'https://github.com/devopshydclub/vprofile-repo.git'
-          }  
-        }
 
         stage('BUILD'){
             steps {
@@ -31,11 +25,11 @@ pipeline {
             }
         }
 
-//         stage('UNIT TEST'){
-//             steps {
-//                 sh 'mvn test'
-//             }
-//         }
+        stage('UNIT TEST'){
+            steps {
+                sh 'mvn test'
+             }
+         }
 
         stage('INTEGRATION TEST'){
             steps {
